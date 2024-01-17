@@ -1,0 +1,77 @@
+
+body{
+    background-color:rgb(182, 226, 255);
+    background-image:url(./currencypic.jpg);
+}
+#tit{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding :5px;
+    text-align: center;
+    font-size:medium;
+}
+.div1{
+    border-style: solid;
+    border-color: black;
+    border-width:4px;
+    border-radius:30px;
+    height:450px;
+    width:800px;
+    margin-left:300px;
+    margin-top:100px;
+    padding-left:80px;
+    padding-top:50px;
+    background-color: rgb(146, 186, 221);
+
+    
+
+}
+#amt{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width:500px;
+    height:30px;
+    border-style:solid ;
+    border-width:3px;
+    
+}
+#frm{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width:310px;
+    height: 35px;
+    border-style:solid ;
+    border-width:3px;
+    
+    
+}
+#to{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width:310px;
+    height:35px;
+    border-style:solid ;
+    border-width:3px;
+    
+   
+}
+#but{
+    width:100px;
+    height:50px;
+    background-color: rgb(139, 231, 139);
+    margin-right:300px;
+    
+}
+
+
+#a{
+    margin-left: 50px;
+}
+
+#b{
+    margin-left: 35px;
+}
+
+#c{
+    margin-left: 35px;
+}
+#red{
+    font-size: larger;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}

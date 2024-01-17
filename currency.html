@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="./currency.css">
+    <link src="./currency.js"></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+ <script>
+$(document).ready(function () {
+ 
+ // Validate amountfield
+ $("#note").hide();
+ let amountError = true;
+ $("#amt").blur(function () {
+     validateAmount();
+ })
+})
+
+ function validateAmount() {
+     let amountValue = $("#amt").val();
+     if (amountValue.length <=1) {
+         $("#note").show();
+         amountError = false;
+         return false;
+     } 
+      else 
+         $("#usercheck").hide();
+     
+ }
+</script>
+
+</head>
+<body id="bod">
+        
+    <div class="div1">
+         <div id="tit"> <h2>CURRENCY CONVERTER</h2></div><br>
+        
+        <strong> ENTER AMOUNT:</strong> <input type="number" id="amt" ><br><br>
+        <h5 id="note" style="color:red">**please enter a valid amount**</h5>
+       
+         <strong> FROM    : </strong>   <select type="text"  id="frm"  >
+
+            <option><i>-select one-</i></option>
+            <option> USD:United States Dollar  </option>
+            <option> BHD:Bahraini Dinar        </option>
+            <option> KYD:Cayman Islands Dollar </option>
+            <option> GBP:British Pound         </option>
+            <option> CAD:Canadian Dollar       </option>
+            <option> SGD:Singapore Dollar      </option>
+
+            </select>  
+           
+            
+          <strong> To :</strong>  <select type="text" id="to"  >
+
+           <option><i>-select one-</i></option>
+           <option> KWD:Kuwaiti Dinar        </option>
+           <option> GIP:Gibraltar Pound       </option>
+           <option> EUR:Euro                  </option>
+           <option> OMR:Omani Rial            </option>
+           <option> INR:Indian Rupee         </option>
+           <option> CHF:Swiss France          </option>
+           <option> JOD:Jordanian Dinar       </option>
+         </select> 
+         <br><br><br>
+        
+    
+     <input type="button" id="but"  onclick="convert()" value="submit" > <br> <br> <br>
+     <div id="red"> </div>
+    </div>
+    
+    <script>
+        function convert(){
+            //USD to others
+            if(document.getElementById("frm").value=="USD:United States Dollar" && document.getElementById("to").value=="KWD:Kuwaiti Dinar"){
+                res=document.getElementById("amt").value
+                result=(res*0.31).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if( document.getElementById("frm").value=="USD:United States Dollar" && document.getElementById("to").value=="GIP:Gibraltar Pound"){
+                res=document.getElementById("amt").value
+                result=(res*0.786).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if(document.getElementById("frm").value=="USD:United States Dollar" && document.getElementById("to").value=="EUR:Euro"){
+              res=document.getElementById("amt").value
+              result=(res*0.31).toFixed(3)
+              document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if(document.getElementById("frm").value=="USD:United States Dollar" && document.getElementById("to").value=="OMR:Omani Rial"){
+                res=document.getElementById("amt").value
+                result=(res*0.38).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+           if( document.getElementById("frm").value=="USD:United States Dollar" && document.getElementById("to").value=="INR:Indian Rupee"){
+                res=document.getElementById("amt").value
+                result=(res*83.13).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if( document.getElementById("frm").value=="USD:United States Dollar" && document.getElementById("to").value=="CHF:Swiss France"){
+                res=document.getElementById("amt").value
+                result=(res*0.85).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if( document.getElementById("frm").value=="USD:United States Dollar" && document.getElementById("to").value=="JOD:Jordanian Dinar"){
+                res=document.getElementById("amt").value
+                result=(res*0.91).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+
+            //KWD to others
+            if(document.getElementById("frm").value=="BHD:Bahraini Dinar" && document.getElementById("to").value=="KWD:Kuwaiti Dinar"){
+                res=document.getElementById("amt").value
+                result=(res*0.82).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if( document.getElementById("frm").value=="BHD:Bahraini Dinar" && document.getElementById("to").value=="GIP:Gibraltar Pound"){
+                res=document.getElementById("amt").value
+                result=(res*2.089).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if(document.getElementById("frm").value=="BHD:Bahraini Dinar" && document.getElementById("to").value=="EUR:Euro"){
+              res=document.getElementById("amt").value
+              result=(res*2.42).toFixed(3)
+              document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if(document.getElementById("frm").value=="BHD:Bahraini Dinar" && document.getElementById("to").value=="OMR:Omani Rial"){
+                res=document.getElementById("amt").value
+                result=(res*1.02).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+           if( document.getElementById("frm").value=="BHD:Bahraini Dinar" && document.getElementById("to").value=="INR:Indian Rupee"){
+                res=document.getElementById("amt").value
+                result=(res*220.38).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if( document.getElementById("frm").value==" BHD:Bahraini Dinar" && document.getElementById("to").value=="CHF:Swiss France"){
+                res=document.getElementById("amt").value
+                result=(res*2.25).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if( document.getElementById("frm").value=="BHD:Bahraini Dinar" && document.getElementById("to").value=="JOD:Jordanian Dinar"){
+                res=document.getElementById("amt").value
+                result=(res*1.88).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+
+            //KYD to others
+            if(document.getElementById("frm").value=="KYD:Cayman Islands Dollar" && document.getElementById("to").value=="KWD:Kuwaiti Dinar"){
+                res=document.getElementById("amt").value
+                result=(res*0.37).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if( document.getElementById("frm").value=="KYD:Cayman Islands Dollar" && document.getElementById("to").value=="GIP:Gibraltar Pound"){
+                res=document.getElementById("amt").value
+                result=(res*0.95).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if(document.getElementById("frm").value=="KYD:Cayman Islands Dollar" && document.getElementById("to").value=="EUR:Euro"){
+              res=document.getElementById("amt").value
+              result=(res*1.10).toFixed(3)
+              document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if(document.getElementById("frm").value=="KYD:Cayman Islands Dollar" && document.getElementById("to").value=="OMR:Omani Rial"){
+                res=document.getElementById("amt").value
+                result=(res*0.46).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+           if( document.getElementById("frm").value=="KYD:Cayman Islands Dollar" && document.getElementById("to").value=="INR:Indian Rupee"){
+                res=document.getElementById("amt").value
+                result=(res*99.78).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if( document.getElementById("frm").value=="KYD:Cayman Islands Dollar" && document.getElementById("to").value=="CHF:Swiss France"){
+                res=document.getElementById("amt").value
+                result=(res*1.02).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if( document.getElementById("frm").value=="KYD:Cayman Islands Dollar" && document.getElementById("to").value=="JOD:Jordanian Dinar"){
+                res=document.getElementById("amt").value
+                result=(res*0.85).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+         
+            //GBP to others
+            if(document.getElementById("frm").value=="GBP:British Pound" && document.getElementById("to").value=="KWD:Kuwaiti Dinar"){
+                res=document.getElementById("amt").value
+                result=(res*0.39).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if( document.getElementById("frm").value=="GBP:British Pound" && document.getElementById("to").value=="GIP:Gibraltar Pound"){
+                res=document.getElementById("amt").value
+                result=(res*24.24).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if(document.getElementById("frm").value=="GBP:British Pound" && document.getElementById("to").value=="EUR:Euro"){
+              res=document.getElementById("amt").value
+              result=(res*1.16).toFixed(3)
+              document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if(document.getElementById("frm").value=="GBP:British Pound" && document.getElementById("to").value=="OMR:Omani Rial"){
+                res=document.getElementById("amt").value
+                result=(res*0.49).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+           if( document.getElementById("frm").value=="GBP:British Pound" && document.getElementById("to").value=="INR:Indian Rupee"){
+                res=document.getElementById("amt").value
+                result=(res*105.8).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if( document.getElementById("frm").value=="GBP:British Pound" && document.getElementById("to").value=="CHF:Swiss France"){
+                res=document.getElementById("amt").value
+                result=(res*1.08).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if( document.getElementById("frm").value=="GBP:British Pound" && document.getElementById("to").value=="JOD:Jordanian Dinar"){
+                res=document.getElementById("amt").value
+                result=(res*0.90).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+     
+             // CAD to others
+             if(document.getElementById("frm").value=="CAD:Canadian Dollar" && document.getElementById("to").value=="KWD:Kuwaiti Dinar"){
+                res=document.getElementById("amt").value
+                result=(res*0.23).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if( document.getElementById("frm").value=="CAD:Canadian Dollar" && document.getElementById("to").value=="GIP:Gibraltar Pound"){
+                res=document.getElementById("amt").value
+                result=(res*0.59).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if(document.getElementById("frm").value=="CAD:Canadian Dollar" && document.getElementById("to").value=="EUR:Euro"){
+              res=document.getElementById("amt").value
+              result=(res*0.68).toFixed(3)
+              document.getElementById("red").innerHTML="RESULT= "+result
+            }
+            if(document.getElementById("frm").value=="CAD:Canadian Dollar" && document.getElementById("to").value=="OMR:Omani Rial"){
+                res=document.getElementById("amt").value
+                result=(res*0.29).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+           if( document.getElementById("frm").value=="CAD:Canadian Dollar" && document.getElementById("to").value=="INR:Indian Rupee"){
+                res=document.getElementById("amt").value
+                result=(res*62.10).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if( document.getElementById("frm").value=="CAD:Canadian Dollar" && document.getElementById("to").value=="CHF:Swiss France"){
+                res=document.getElementById("amt").value
+                result=(res*0.63).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if( document.getElementById("frm").value=="CAD:Canadian Dollar" && document.getElementById("to").value=="JOD:Jordanian Dinar"){
+                res=document.getElementById("amt").value
+                result=(res*0.53).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+         
+            //SGD to others
+            if(document.getElementById("frm").value==" SGD:Singapore Dollar" && document.getElementById("to").value=="KWD:Kuwaiti Dinar"){
+                res=document.getElementById("amt").value
+                result=(res*0.23).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if( document.getElementById("frm").value=="SGD:Singapore Dollar" && document.getElementById("to").value=="GIP:Gibraltar Pound"){
+                res=document.getElementById("amt").value
+                result=(res*0.592).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if(document.getElementById("frm").value=="SGD:Singapore Dollar" && document.getElementById("to").value=="EUR:Euro"){
+              res=document.getElementById("amt").value
+              result=(res*0.69).toFixed(3)
+              document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if(document.getElementById("frm").value=="SGD:Singapore Dollar" && document.getElementById("to").value=="OMR:Omani Rial"){
+                res=document.getElementById("amt").value
+                result=(res*0.29).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+           if( document.getElementById("frm").value==" SGD:Singapore Dollar" && document.getElementById("to").value=="INR:Indian Rupee"){
+                res=document.getElementById("amt").value
+                result=(res*62.52).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if( document.getElementById("frm").value==" SGD:Singapore Dollar" && document.getElementById("to").value=="CHF:Swiss France"){
+                res=document.getElementById("amt").value
+                result=(res*0.64).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+            if( document.getElementById("frm").value==" SGD:Singapore Dollar" && document.getElementById("to").value=="JOD:Jordanian Dinar"){
+                res=document.getElementById("amt").value
+                result=(res*0.53).toFixed(3)
+                document.getElementById("red").innerHTML="RESULT = "+result
+            }
+           
+        }
+        
+    </script>
+    
+</body>
+</html>
